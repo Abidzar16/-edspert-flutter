@@ -14,17 +14,42 @@ class FirstRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('First Route'),
+        title: const Text('Data Diri'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: const [
-                Text('Nama: Abidzar M. G. Kurniawan'),
-                Text('Domisili: Bandung'),
+              children: <Widget>[
+                Card(
+                  elevation: 2,
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.all(Radius.circular(4)),
+                    child: Image.network('https://loremflickr.com/100/100'),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8),
+                  child: Column(
+                    /// Add this
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const <Widget>[
+                      Text(
+                        'Abidzar M. G. Kurniawan',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      Text(
+                        'Mahasiswa S2',
+                        style: TextStyle(fontSize: 14, color: Color(0xff666666)),
+                      ),
+                      Text(
+                        'Full-Stack Developer (MERN stack)',
+                        style: TextStyle(fontSize: 18, color: Color(0xff666666)),
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
             ElevatedButton(
@@ -50,7 +75,7 @@ class SecondRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Second Route'),
+        title: const Text('Halaman Lain'),
       ),
       body: Center(
         child: Column(
